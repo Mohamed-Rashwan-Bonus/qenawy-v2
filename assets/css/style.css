@@ -159,6 +159,10 @@ footer{padding:44px 60px;display:flex;justify-content:space-between;align-items:
 .lightbox.open{display:flex}
 .lightbox img{max-width:min(920px,94vw);max-height:86vh;border-radius:14px}
 .lightbox-x{position:absolute;top:22px;left:26px;width:48px;height:48px;border-radius:50%;border:1px solid #fff;background:transparent;color:#fff;font-size:1.6rem;cursor:pointer}
+/* image loading skeletons (shimmer while lazy images load) */
+.card img,.shot img,.hero-photo img{background:linear-gradient(110deg,#162840 30%,#1d3350 45%,#162840 60%);background-size:200% 100%;animation:shimmer 1.4s linear infinite}
+.card img.loaded,.shot img.loaded,.hero-photo img.loaded{animation:none;background:none}
+@keyframes shimmer{to{background-position:-200% 0}}
 .hidden{display:none!important}
 
 /* premium layer */

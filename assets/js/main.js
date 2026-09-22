@@ -59,6 +59,11 @@ if(lb){
   addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open');});
 }
 
+document.querySelectorAll('.card img,.shot img,.hero-photo img').forEach(img=>{
+  if(img.complete&&img.naturalWidth)img.classList.add('loaded');
+  else{img.addEventListener('load',()=>img.classList.add('loaded'));img.addEventListener('error',()=>img.classList.add('loaded'));}
+});
+
 document.getElementById('bookingForm').addEventListener('submit',function(e){
   e.preventDefault();
   const n=bName.value.trim(),p=bPhone.value.trim(),s=bProg.value,d=bDate.value,no=bNotes.value.trim();
